@@ -8,7 +8,7 @@ const SortBy = ({title, name}) => {
     const dir = useSelector(({filters: {sortby}}) => sortby[name])
 
     return (
-        <button className={`font-medium ml-5 ${ dir ? 'text-black' : 'text-gray-400'}`} onClick={(e) => {
+        <button className={`block md:flex font-medium ml-0 md:ml-5 ${ dir ? 'text-black' : 'text-gray-400'}`} onClick={(e) => {
             e.preventDefault();
             dispatch(doSort(name));
         }}>{title} {dir && (dir === 'asc' ? '🔼' : '🔽')}</button>

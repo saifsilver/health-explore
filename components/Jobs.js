@@ -34,25 +34,22 @@ const Jobs = () => {
 
     return (
         <div className="my-5 bg-white p-5">
-           { status === 'loading' && <>Searching....</> }
-           { status === 'error' && <>Error: Something Went Wrong!</> }
-           { 
-                status === 'success' && 
-                <>
-                    <div className="flex justify-between items-center flex-wrap lg:flex-nowrap">
-                        <h1 className="mb-1 font-semibold">{data.jobsCount} jobs posting</h1>
-                        <div className="flex justify-between items-center text-base">
-                            <span className="ml-0 font-normal text-gray-400">Sort by </span>
-                            <SortBy title="Location" name="location" />
-                            <SortBy title="Role" name="role" />
-                            <SortBy title="Department" name="department" />
-                            <SortBy title="Education" name="education" />
-                            <SortBy title="Experience" name="experience" />
-                        </div>
+            <>
+                <div className="flex justify-between items-center flex-wrap lg:flex-nowrap">
+                    <h1 className="mb-1 font-semibold">{ status === 'success' ? <>{data.jobsCount} jobs posting</> : <>Loading....</> }</h1>
+                    <div className="flex-col items-start md:flex-row md:items-center text-base flex-wrap justify-start">
+                        <span className="ml-0 font-normal text-gray-400">Sort by </span>
+                        <SortBy title="Location" name="location" />
+                        <SortBy title="Role" name="role" />
+                        <SortBy title="Department" name="department" />
+                        <SortBy title="Education" name="education" />
+                        <SortBy title="Experience" name="experience" />
                     </div>
-                    { data.jobsList.map( (hospital, index) => <Hospital key={index} hospital={hospital} /> ) }
-                </> 
-            }
+                </div>
+                { status === 'success' && data.jobsList.map( (hospital, index) => <Hospital key={index} hospital={hospital} /> ) }
+                { status === 'loading' && <>Searching....</> }
+                { status === 'error' && <>Error: Something Went Wrong!</> }
+            </>
         </div>
     );
 };

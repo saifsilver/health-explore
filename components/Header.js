@@ -21,7 +21,7 @@ const Header = () => {
                         <img className="h-8 w-40 sm:h-10" src="/img/logo.svg" alt="Health Explorer" />
                     </a>
                 </div>
-                <div className="-mr-2 -my-2 xl:hidden">
+                <div className="mr-2 -my-2 xl:hidden">
                     <a href="#" className="relative ml-8 whitespace-nowrap inline-flex items-center justify-center p-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-500 hover:bg-blue-600 hover:text-white">SS<span className="absolute bg-red-500 text-white rounded-full flex items-center justify-center transform -translate-y-5 translate-x-5 border-current border-2 h-8 w-8">22</span></a>
                 </div>
                 <nav className="hidden xl:flex flex-grow justify-center space-x-10 place-items-center text-base font-medium text-gray-500">
