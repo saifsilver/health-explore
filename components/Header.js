@@ -4,7 +4,7 @@ import { Transition } from '@headlessui/react'
 const Header = () => {
     const [isOpen, toggleMenu] = useState(false)
     return (
-        <div className="relative bg-white px-10 mb-5 shadow-sm">
+        <div className="relative bg-white px-5 mb-5 shadow-sm">
             <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
                 <div className="mr-2 -my-2 xl:hidden">
                     <button onClick={() => toggleMenu(old => !old)} type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -22,7 +22,7 @@ const Header = () => {
                     </a>
                 </div>
                 <div className="mr-2 -my-2 xl:hidden">
-                    <a href="#" className="relative ml-8 whitespace-nowrap inline-flex items-center justify-center p-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-500 hover:bg-blue-600 hover:text-white">SS<span className="absolute bg-red-500 text-white rounded-full flex items-center justify-center transform -translate-y-5 translate-x-5 border-current border-2 h-8 w-8">22</span></a>
+                    <a href="#" className="relative ml-8 whitespace-nowrap inline-flex items-center justify-center h-10 w-10 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-500 hover:bg-blue-600 hover:text-white">SS<span className="text-xs absolute bg-red-500 text-white rounded-full flex items-center justify-center transform -translate-y-4 translate-x-6 border-current border-2 h-8 w-8">22</span></a>
                 </div>
                 <nav className="hidden xl:flex flex-grow justify-center space-x-10 place-items-center text-base font-medium text-gray-500">
                     <a href="#" className="hover:text-gray-900">PROFILE</a>
@@ -49,7 +49,7 @@ const Header = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
-            <div className={`absolute top-0 inset-x-0 p-2 transition transform origin-top-right xl:hidden`}>
+            <div className={`absolute top-0 inset-x-0 p-2 transition transform origin-top-right xl:hidden z-50`}>
                 <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50  overflow-auto">
                     <div className="pt-5 pb-6 px-5">
                         <div className="flex items-center justify-between">
