@@ -8,7 +8,7 @@ import Head from 'next/head'
 
 export default function Home(){
     return (
-        <div className="lg:conatiner mx-auto flex flex-col h-auto justify-between bg-gray-100">
+        <div className="lg:conatiner mx-auto flex flex-col h-auto justify-between bg-gray-100 overflow-hidden">
             <Head>
                 <title>Health Explore</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
