@@ -9,6 +9,9 @@ const SearchInput = () => {
     const dispatch = useDispatch()
     return (
         <div className="p-2 relative text-gray-600 flex bg-white ">
+            <button type="submit" className="absolute left-5 top-0 mt-5 mr-4">
+                <img src="/img/search.svg" alt="Search" className="w-5" />
+            </button>
             <input onChange={(e) => {
                 if(typeof searchInterval !== 'undefined'){
                     clearTimeout(searchInterval)
@@ -20,11 +23,8 @@ const SearchInput = () => {
                 }, 1500)
 
                 setSearch(e.target.value)
-            }} className="w-full border-transparent bg-white px-5 pr-16 focus:outline-none focus:ring-transparent"
+            }} className="w-full border-transparent bg-white px-5 pl-12 focus:outline-none focus:ring-transparent"
             type="search" name="search" placeholder="Search fot any job, title, keywords or company" value={search} />
-            <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
-                <img src="/img/search.svg" alt="Search" className="w-5" />
-            </button>
         </div>
     );
 };
