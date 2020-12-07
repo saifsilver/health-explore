@@ -15,14 +15,14 @@ const Header = () => {
                         </svg>
                     </button>
                 </div>
-                <div className="flex justify-start flex-grow xl:flex-grow-0">
+                <div className="flex justify-start flex-grow xl:flex-grow-0" style={{marginLeft: '0px !important'}}>
                     <a href="#">
                         <span className="sr-only">Health Explorer</span>
                         <img className="h-8 w-40 sm:h-10" src="/img/logo.svg" alt="Health Explorer" />
                     </a>
                 </div>
-                <div className="mr-2 -my-2 xl:hidden">
-                    <a href="#" className="relative ml-8 whitespace-nowrap inline-flex items-center justify-center h-10 w-10 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-500 hover:bg-blue-600 hover:text-white">SS<span className="text-xs absolute bg-red-500 text-white rounded-full flex items-center justify-center transform -translate-y-4 translate-x-6 border-current border-2 h-8 w-8">22</span></a>
+                <div className="mr-5 -my-2 xl:hidden" style={{marginRight: '1.25rem !important'}}>
+                    <a href="#" className="relative -ml-8 whitespace-nowrap inline-flex items-center justify-center h-10 w-10 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-500 hover:bg-blue-600 hover:text-white">SS<span className="text-xs absolute bg-red-500 text-white rounded-full flex items-center justify-center transform -translate-y-4 translate-x-6 border-current border-2 h-8 w-8">22</span></a>
                 </div>
                 <nav className="hidden xl:flex flex-grow justify-center space-x-10 place-items-center text-base font-medium text-gray-500">
                     <a href="#" className="hover:text-gray-900">PROFILE</a>
