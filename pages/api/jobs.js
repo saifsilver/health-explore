@@ -49,7 +49,7 @@ export default async (req, res) => {
   if (req.method === 'POST') {
     let filters = req.body.selected;
     let search = req.body.search.trim();
-    search = search.length > 0 ? search : false;
+    search = search.length > 0 ? search.toLowerCase() : false;
     let sortby = req.body.sortby;
 
     // @todo: implement filters and search
