@@ -6,7 +6,7 @@ const FootTitle = ({text}) => {
 
 const Footer = () => {
     return (
-        <div className="flex bg-white mt-auto py-10 text-gray-600 text-sm leading-8 flex-wrap md:flex-nowrap -mx-10 px-10">
+        <div className="flex bg-white mt-auto py-10 text-gray-600 text-sm leading-8 flex-wrap md:flex-nowrap px-10">
           <div className="flex flex-col mb-10 mr-10">
             <FootTitle text="About Us" />
             <p className="mb-4">We are a team of nurses, doctors, technologists and executives dedicated to help nurses find jobs that they love</p>

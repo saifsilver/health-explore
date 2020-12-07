@@ -38,7 +38,7 @@ const Jobs = () => {
                 <div className="flex justify-between items-center flex-wrap lg:flex-nowrap">
                     <h1 className="mb-1 font-semibold">{ status === 'success' ? <>{data.jobsCount} jobs posting</> : <>Loading....</> }</h1>
                     <div className="flex-col items-start md:flex-row md:items-center text-base flex-wrap justify-start">
-                        <span className="ml-0 font-normal text-gray-400">Sort by </span>
+                        <span className="ml-0 font-normal text-black">Sort by </span>
                         <SortBy title="Location" name="location" />
                         <SortBy title="Role" name="role" />
                         <SortBy title="Department" name="department" />

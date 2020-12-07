@@ -4,7 +4,7 @@ import { Transition } from '@headlessui/react'
 const Header = () => {
     const [isOpen, toggleMenu] = useState(false)
     return (
-        <div className="relative bg-white -ml-10 -mr-10 px-10 mb-5 shadow-sm">
+        <div className="relative bg-white px-10 mb-5 shadow-sm">
             <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
                 <div className="mr-2 -my-2 xl:hidden">
                     <button onClick={() => toggleMenu(old => !old)} type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
