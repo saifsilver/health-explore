@@ -1,5 +1,4 @@
 import jobs from '../jobs';
-const httpMocks = require('node-mocks-http');
 
 describe("Search And Filter Jobs", () => {
     let req;
