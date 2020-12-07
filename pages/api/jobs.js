@@ -2,6 +2,10 @@
 import hospitals from '../../data/jobs';
 
 const hasMatched = (filters, search, job) => {
+  if(search !== false && JSON.stringify(job).toLowerCase().indexOf(search) === -1){
+    return false;
+  }
+
   if(filters !== false){
     for (const [key, value] of Object.entries(filters)) {
       if(Array.isArray(job[key])){
@@ -15,10 +19,6 @@ const hasMatched = (filters, search, job) => {
         return false;
       }
     }
-  }
-
-  if(search !== false && JSON.stringify(job).toLowerCase().indexOf(search) === -1){
-    return false;
   }
 
   return true
