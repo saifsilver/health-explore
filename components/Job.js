@@ -20,7 +20,7 @@ const Job = ({job}) => {
                 <div>{formatDistance(new Date(job.created), new Date()).replace(' ago','')+' ago'}</div>
             </div>
             {details && <>
-                <div className="py-10 flex-col md:flex-row ">
+                <div className="py-10 flex flex-col md:flex-row ">
                     <div className="w-full md:w-3/4">
                         <div className="flex justify-between items-start my-3"><div className="w-1/2">Department:</div><div className="w-1/2">{job.department.join(', ')}</div></div>
                         <div className="flex justify-between items-start my-3"><div className="w-1/2">Hours / shifts</div><div className="w-1/2">{job.hours.join('/')} / {job.work_schedule}</div></div>
