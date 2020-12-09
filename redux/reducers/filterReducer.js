@@ -5,7 +5,8 @@ const initialState = {
     more: false,
     selected:{},
     search:"",
-    sortby:{}
+    sortby:{},
+    hospitals:[]
 }
 
 const filterReducer = (state = initialState, action) => {

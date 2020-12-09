@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import { useQuery } from 'react-query';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addHospitals } from '../redux/actions/hospitalActions';
 import Hospital from './Hospital';
 import SortBy from './SortBy';
 
@@ -28,15 +29,22 @@ const fetchJobs = async (key, filters) => {
 }
 
 const Jobs = () => {
-    const selectedFilters = useSelector(({ filters: { selected, search, sortby }}) => ({ selected, search, sortby }))
+    const selectedFilters = useSelector(({ filters: { selected, search }}) => ({ selected, search }))
+    const { jobsList, jobsCount } = useSelector(({ hospitals: { jobsList, jobsCount }}) => ({ jobsList, jobsCount }))
+    const dispatch = useDispatch();
 
-    const { data, status } = useQuery(['jobs', selectedFilters], fetchJobs)
+    const { status } = useCallback(() => useQuery(['jobs', selectedFilters], fetchJobs, {
+        onSuccess: (data, status) => {
+            console.log('Called Server')
+            dispatch(addHospitals(data))
+        }
+    }), [selectedFilters.selected, selectedFilters.search])();
 
     return (
         <div className="my-5 bg-white p-5">
             <>
                 <div className="flex justify-between items-center flex-wrap lg:flex-nowrap">
-                    <h1 className="mb-1 font-semibold">{ status === 'success' ? <>{data.jobsCount} jobs posting</> : <>Loading....</> }</h1>
+                    <h1 className="mb-1 font-semibold">{ status === 'success' ? (`${jobsCount} jobs posting`) : status === 'loading' ? <>Loading....</>: '' }</h1>
                     <div className="flex-col items-start md:flex-row md:items-center text-base flex-wrap justify-start">
                         <span className="ml-0 font-normal text-black">Sort by </span>
                         <SortBy title="Location" name="location" />
@@ -46,7 +54,7 @@ const Jobs = () => {
                         <SortBy title="Experience" name="experience" />
                     </div>
                 </div>
-                { status === 'success' && data.jobsList.map( (hospital, index) => <Hospital key={index} hospital={hospital} /> ) }
+                { status === 'success' && jobsList && jobsList.map( (hospital, index) => <Hospital key={index} hospital={hospital} /> ) }
                 { status === 'loading' && <>Searching....</> }
                 { status === 'error' && <>Error: Something Went Wrong!</> }
             </>
