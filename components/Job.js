@@ -28,10 +28,10 @@ const Job = ({job}) => {
                     </div>
                     <div className="w-full md:w-1/4 flex flex-col justify-center items-center">
                         <button className="border border-blue-500 bg-blue-500 text-white px-6 py-1 rounded-xl mb-3" onClick={(e)=>{
-                             e.preventDefault();
+                             e.stopPropagation();
                         }}>Job details</button>
                         <button className="rounded-xl border border-blue-500 text-blue-500 px-6 py-1" onClick={(e)=>{
-                            e.preventDefault();
+                            e.stopPropagation();
                             alert('Saved')
                         }}>Save job</button>
                     </div>
