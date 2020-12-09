@@ -27,8 +27,13 @@ const Job = ({job}) => {
                         <div className="flex justify-between items-start my-3"><div className="w-1/2">Summery</div><div className="w-1/2">{job.description}</div></div>
                     </div>
                     <div className="w-full md:w-1/4 flex flex-col justify-center items-center">
-                        <button className="border border-blue-500 bg-blue-500 text-white px-6 py-1 rounded-xl mb-3">Job details</button>
-                        <button className="rounded-xl border border-blue-500 text-blue-500 px-6 py-1">Save job</button>
+                        <button className="border border-blue-500 bg-blue-500 text-white px-6 py-1 rounded-xl mb-3" onClick={(e)=>{
+                             e.preventDefault();
+                        }}>Job details</button>
+                        <button className="rounded-xl border border-blue-500 text-blue-500 px-6 py-1" onClick={(e)=>{
+                            e.preventDefault();
+                            alert('Saved')
+                        }}>Save job</button>
                     </div>
                 </div>
             </>}
