@@ -20,7 +20,7 @@ const SearchInput = () => {
                 e.preventDefault();
                 searchInterval = setTimeout(() => {
                     dispatch(doSearch(search))
-                }, 1500)
+                }, 800)
 
                 setSearch(e.target.value)
             }} className="w-full border-transparent bg-white px-5 pl-12 focus:outline-none focus:ring-transparent"
