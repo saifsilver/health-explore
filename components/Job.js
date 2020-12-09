@@ -4,7 +4,7 @@ import { formatDistance } from 'date-fns'
 
 const Job = ({job}) => {
     const [details, toggleDetails] = useState(false);
-
+    const [saved, setSave] = useState(false)
     return (
         <div className="py-5 hover:bg-blue-50 px-5 my-2 border border-gray-200">
             <div className="flex-col md:flex-row justify-between items-center" onClick={(e) => {
@@ -32,8 +32,7 @@ const Job = ({job}) => {
                         }}>Job details</button>
                         <button className="rounded-xl border border-blue-500 text-blue-500 px-6 py-1" onClick={(e)=>{
                             e.stopPropagation();
-                            alert('Saved')
-                        }}>Save job</button>
+                        }}>{ !saved ? 'Delete' : 'Save job'}</button>
                     </div>
                 </div>
             </>}
