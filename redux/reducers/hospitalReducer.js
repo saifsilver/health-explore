@@ -35,7 +35,7 @@ const hospitalReducer = (state = initialState, action) => {
         default: return { ...state };
     }
 };
-
+/* Sort List */
 const sortBy = (hostitals, field, dir) => {
     let getVal = false
     switch(field){
